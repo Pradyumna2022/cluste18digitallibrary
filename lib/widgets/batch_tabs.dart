@@ -1,3 +1,4 @@
+import 'package:digital_library/global/color.dart';
 import 'package:digital_library/pages/auth/log_in.dart';
 import 'package:digital_library/pages/auth/sign_in.dart';
 import 'package:digital_library/pages/batch/batch1.dart';
@@ -37,29 +38,43 @@ class _BatchTabsWidgetState extends State<BatchTabsWidget>
     return Scaffold(
       body: Column(
         children: [
-          TabBar.secondary(
-            physics: ScrollPhysics(),
-            dividerHeight: 0,
-            // labelColor: Colors.white,
-            labelStyle: GoogleFonts.josefinSans(
-              textStyle: TextStyle(
-                  color: Colors.black,
-                  // letterSpacing: .5,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+            decoration: BoxDecoration(
+                border: Border.all(
+                  color: whiteColor,
+                  width: 1,
+                ),
+                color: Color.fromARGB(26, 186, 182, 182),
+                borderRadius: BorderRadius.circular(8)),
+            child: TabBar.secondary(
+              // padding: EdgeInsets.all(5),
+              physics: ScrollPhysics(),
+              // labelPadding: EdgeInsets.all(5),
+              // dividerHeight: -10,
+              // labelColor: Colors.white,
+              labelStyle: GoogleFonts.josefinSans(
+                textStyle: TextStyle(
+                    color: Colors.black,
+                    // letterSpacing: .5,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold),
+              ),
+              unselectedLabelColor: Color.fromARGB(115, 101, 100, 100),
+              dividerColor: Colors.white,
+              // indicatorWeight: 2,
+              indicatorColor: Colors.white,
+              tabAlignment: TabAlignment.fill,
+              controller: _tabController,
+              tabs: [
+                Tab(
+                  text: 'Batch1',
+                ),
+                Tab(text: 'Batch2'),
+                Tab(text: 'Batch3'),
+                Tab(text: 'Batch4'),
+              ],
             ),
-            unselectedLabelColor: Colors.black45,
-            dividerColor: Colors.black,
-            indicatorWeight: 2,
-            indicatorColor: Colors.black,
-            tabAlignment: TabAlignment.fill,
-            controller: _tabController,
-            tabs: [
-              Tab(text: 'Batch1'),
-              Tab(text: 'Batch2'),
-              Tab(text: 'Batch3'),
-              Tab(text: 'Batch4'),
-            ],
           ),
           Expanded(
             child: TabBarView(

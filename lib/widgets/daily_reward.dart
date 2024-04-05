@@ -51,7 +51,7 @@ class DailyReward extends StatelessWidget {
               ),
             ),
             trailing: Text(
-              "- ₹$coinsValue",
+              "- \$$coinsValue",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           )),

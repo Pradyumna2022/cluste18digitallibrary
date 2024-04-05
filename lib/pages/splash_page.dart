@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:digital_library/pages/auth/application_form.dart';
 import 'package:digital_library/pages/auth/auth_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if (mounted) {
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const AuthTabs()),
+            MaterialPageRoute(builder: (context) => ApplicationForm()),
             (route) => false);
       }
     });

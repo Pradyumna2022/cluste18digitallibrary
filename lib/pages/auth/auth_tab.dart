@@ -53,8 +53,8 @@ class _AuthTabsState extends State<AuthTabs> with TickerProviderStateMixin {
             child: TabBarView(
               controller: _tabController,
               children: [
-                LoginPage(),
-                SignInPage(),
+                // LoginPage(),
+                // SignInPage(),
               ],
             ),
           ),

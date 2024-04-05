@@ -37,7 +37,7 @@ class BuyCoinsWidget extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {},
               child: Text(
-                "₹ $money",
+                "\$ $money",
                 style: TextStyle(color: Colors.white, fontSize: 9),
               ),
               style: ElevatedButton.styleFrom(

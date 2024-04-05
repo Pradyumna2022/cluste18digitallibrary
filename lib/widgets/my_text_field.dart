@@ -34,7 +34,7 @@ class MyTextField extends StatelessWidget {
           keyboardType: keyboardType,
           decoration: InputDecoration(
             suffixIcon: suffxIcon,
-            fillColor: Colors.amber[50],
+            fillColor: Color.fromARGB(255, 246, 245, 244),
             filled: true,
             contentPadding: EdgeInsets.only(left: 10),
             hintText: hintText,

@@ -1,4 +1,6 @@
 import 'package:digital_library/pages/auth/application_form.dart';
+import 'package:digital_library/pages/auth/log_in.dart';
+import 'package:digital_library/pages/galery_page.dart';
 import 'package:digital_library/pages/nested_page.dart';
 import 'package:digital_library/pages/splash_page.dart';
 import 'package:digital_library/theme/theme.dart';
@@ -19,6 +21,6 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         //nested for the whole app control
         // theme: lightMode,
-        home: ApplicationForm());
+        home: SplashScreen());
   }
 }

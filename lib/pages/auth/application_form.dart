@@ -1,8 +1,11 @@
 import 'package:digital_library/pages/nested_page.dart';
 import 'package:digital_library/widgets/my_button.dart';
 import 'package:digital_library/widgets/my_text_field.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ApplicationForm extends StatefulWidget {
@@ -175,6 +178,69 @@ class _ApplicationFormState extends State<ApplicationForm> {
                   ),
                 ),
               ),
+              DottedBorder(
+                borderType: BorderType.RRect,
+                radius: Radius.circular(12),
+                color: Colors.grey, //color of dotted/dash line
+                strokeWidth: 0.5, //thickness of dash/dots
+                dashPattern: [1, 4],
+                //dash patterns, 10 is dash width, 6 is space width
+                child: Center(
+                  child: ElevatedButton(
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                    onPressed: () async {
+                      FilePickerResult? result =
+                          await FilePicker.platform.pickFiles(
+                        type: FileType.custom,
+                        allowedExtensions: ['pdf', 'doc', 'docx'],
+                      );
+
+                      if (result != null) {
+                        // selectedFiles.add(result.files.first);
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text("File Selected"),
+                              content: Text(
+                                  "Do you want to store the selected file?"),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context); // Close the dialog
+                                  },
+                                  child: Text("Cancel"),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    // Store the selected files or perform any other action
+                                    Navigator.pop(context); // Close the dialog
+                                  },
+                                  child: Text("Store"),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      }
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // Image.asset('assets/images/uploadiconverify.png'),
+                        SizedBox(width: Get.width * 0.02),
+                        Text(
+                          'National ID card',
+                          style: Get.theme.textTheme.bodySmall!
+                              .copyWith(color: Color(0xffCFCFCF)),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [

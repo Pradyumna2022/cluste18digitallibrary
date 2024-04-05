@@ -1,3 +1,4 @@
+import 'package:digital_library/global/color.dart';
 import 'package:digital_library/pages/auth/log_in.dart';
 import 'package:digital_library/pages/auth/sign_in.dart';
 import 'package:digital_library/pages/batch/batch1.dart';
@@ -6,6 +7,7 @@ import 'package:digital_library/pages/batch/batch3.dart';
 import 'package:digital_library/pages/batch/batch4.dart';
 import 'package:digital_library/pages/batch/subBatchboys/batch1_boys.dart';
 import 'package:digital_library/pages/batch/subBatchgirsl/batch1_girsl.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -39,25 +41,50 @@ class _SubBatchTabsWidgetState extends State<SubBatchTabsWidget>
     return Scaffold(
       body: Column(
         children: [
-          TabBar.secondary(
-            physics: ScrollPhysics(),
+          TabBar(
+            // physics: ScrollPhysics(),
             dividerHeight: 0,
-            // labelColor: Colors.white,
-            labelStyle: GoogleFonts.josefinSans(
-              textStyle: TextStyle(
-                  color: Colors.green,
-                  fontSize: 19,
-                  fontWeight: FontWeight.bold),
-            ),
-            unselectedLabelColor: Colors.black45,
-            dividerColor: Colors.black,
-            indicatorWeight: 2,
-            indicatorColor: Colors.black,
-            tabAlignment: TabAlignment.fill,
+            // // labelColor: Colors.white,
+
+            // // dragStartBehavior: DragStartBehavior.start,
+            labelPadding: EdgeInsets.zero,
+            splashBorderRadius: BorderRadius.circular(150),
+            // // labelStyle: GoogleFonts.josefinSans(
+            // //   textStyle: TextStyle(
+            // //       color: Colors.green,
+            // //       fontSize: 19,
+            // //       fontWeight: FontWeight.bold),
+            // // ),
+            // unselectedLabelColor: Colors.black45,
+            // // dividerColor: Colors.yellow,
+
+            indicatorWeight: 0.01,
+            indicatorColor: whiteColor,
+
+            // // tabAlignment: TabAlignment.fill,
             controller: _tabController,
             tabs: [
-              Tab(text: 'Boys'),
-              Tab(text: 'Girs'),
+              Tab(
+                // height: 20,
+                // text: 'Boys',
+                icon: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Image.asset(
+                    'lib/icons/boy.png',
+                    // width: 25,
+                  ),
+                ),
+              ),
+              Tab(
+                iconMargin: EdgeInsets.all(10),
+                icon: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Image.asset(
+                    'lib/icons/woman.png',
+                    // width: 25,
+                  ),
+                ),
+              ),
             ],
           ),
           Expanded(

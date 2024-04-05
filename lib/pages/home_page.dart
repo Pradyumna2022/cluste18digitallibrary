@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isLightTheme = true;
   List<String> photos = [
     'lib/icons/p1.jpg',
     'lib/icons/p2.jpg',
@@ -32,6 +33,9 @@ class _HomePageState extends State<HomePage> {
       ),
     ),
   ];
+
+  Future<void> refreshPage() async {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,133 +63,147 @@ class _HomePageState extends State<HomePage> {
           }),
         ),
         centerTitle: true,
+        // actions: [
+        //   IconButton(
+        //       onPressed: () {
+        //         setState(() {
+        //           isLightTheme = !isLightTheme;
+        //         });
+        //       },
+        //       icon:
+        //           isLightTheme ? Icon(Icons.light_mode) : Icon(Icons.dark_mode)
+        // )
+        // ],
       ),
       drawer: DrawerWidget(),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: ListView(
-            physics: ScrollPhysics(),
-            children: [
-              // Container(
-              //     decoration: BoxDecoration(
-              //       color: Colors.white,
-              //       borderRadius: BorderRadius.circular(12),
-              //       boxShadow: [
-              //         BoxShadow(
-              //           color: Colors.grey.withOpacity(0.5),
-              //           spreadRadius: 1,
-              //           blurRadius: 1,
-              //           offset: Offset(0, 3),
-              //         ),
-              //       ],
-              //     ),
-              //     child: TextFormField(
-              //       decoration: InputDecoration(
-              //           hintText: 'Search Here...',
-              //           contentPadding: EdgeInsets.only(left: 15),
-              //           enabledBorder: InputBorder.none,
-              //           focusedBorder: InputBorder.none),
-              //     )),
-              SizedBox(
-                height: 170,
-                child: CarouselSlider(
-                  items: items,
-                  options: CarouselOptions(
-                    aspectRatio: 2,
-                    viewportFraction: 1,
-                    height: 150,
-                    enlargeCenterPage: true,
-                    scrollDirection: Axis.horizontal,
-                    autoPlay: true,
-                    onPageChanged: (index, reason) {
-                      print(index.toString() +
-                          '----------------index' +
-                          reason.toString() +
-                          '-----------------reason');
-                    },
+          child: RefreshIndicator(
+            onRefresh: refreshPage,
+            child: ListView(
+              physics: ScrollPhysics(),
+              children: [
+                // Container(
+                //     decoration: BoxDecoration(
+                //       color: Colors.white,
+                //       borderRadius: BorderRadius.circular(12),
+                //       boxShadow: [
+                //         BoxShadow(
+                //           color: Colors.grey.withOpacity(0.5),
+                //           spreadRadius: 1,
+                //           blurRadius: 1,
+                //           offset: Offset(0, 3),
+                //         ),
+                //       ],
+                //     ),
+                //     child: TextFormField(
+                //       decoration: InputDecoration(
+                //           hintText: 'Search Here...',
+                //           contentPadding: EdgeInsets.only(left: 15),
+                //           enabledBorder: InputBorder.none,
+                //           focusedBorder: InputBorder.none),
+                //     )),
+                SizedBox(
+                  height: 170,
+                  child: CarouselSlider(
+                    items: items,
+                    options: CarouselOptions(
+                      aspectRatio: 2,
+                      viewportFraction: 1,
+                      height: 150,
+                      enlargeCenterPage: false,
+                      scrollDirection: Axis.horizontal,
+                      autoPlay: false,
+                      onPageChanged: (index, reason) {
+                        print(index.toString() +
+                            '----------------index' +
+                            reason.toString() +
+                            '-----------------reason');
+                      },
+                    ),
                   ),
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Galary",
-                    style: GoogleFonts.josefinSans(
-                      textStyle: TextStyle(
-                          color: Colors.black,
-                          letterSpacing: .5,
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => GalaryDetailsView()));
-                      print('----------- GalaryDetailsView');
-                    },
-                    child: Text(
-                      "View More",
-                      style: GoogleFonts.josefinSans(
-                        textStyle: TextStyle(
-                            color: Colors.black45,
-                            letterSpacing: .5,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15.0, bottom: 10),
-                child: GridView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: 3,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3, crossAxisSpacing: 10),
-                    itemBuilder: (context, index) {
-                      return Container(
-                        // padding: EdgeInsets.symmetric(vertical: 5),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 1,
-                              blurRadius: 1,
-                              offset: Offset(0, 3),
-                            ),
-                          ],
-                        ),
-                        child: ClipRRect(
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     Text(
+                //       "Galary",
+                //       style: GoogleFonts.josefinSans(
+                //         textStyle: TextStyle(
+                //             color: Colors.black,
+                //             letterSpacing: .5,
+                //             fontSize: 25,
+                //             fontWeight: FontWeight.bold),
+                //       ),
+                //     ),
+                //     GestureDetector(
+                //       onTap: () {
+                //         Navigator.push(
+                //             context,
+                //             MaterialPageRoute(
+                //                 builder: (context) => GalaryDetailsView()));
+                //         print('----------- GalaryDetailsView');
+                //       },
+                //       child: Text(
+                //         "View More",
+                //         style: GoogleFonts.josefinSans(
+                //           textStyle: TextStyle(
+                //               color: Colors.black45,
+                //               letterSpacing: .5,
+                //               fontSize: 20,
+                //               fontWeight: FontWeight.bold),
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 5.0, bottom: 10),
+                  child: GridView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: 3,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3, crossAxisSpacing: 10),
+                      itemBuilder: (context, index) {
+                        return Container(
+                          // padding: EdgeInsets.symmetric(vertical: 5),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
-                              photos[index],
-                              fit: BoxFit.cover,
-                            )),
-                      );
-                    }),
-              ),
-              // Text('fdshfsh')
-              // Text(
-              //   "Batches",
-              //   style: GoogleFonts.playfairDisplay(
-              //     textStyle: TextStyle(
-              //         color: Colors.black,
-              //         letterSpacing: .5,
-              //         fontSize: 25,
-              //         fontWeight: FontWeight.bold),
-              //   ),
-              // ),
-              SizedBox(height: 300, child: BatchTabsWidget())
-            ],
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 1,
+                                blurRadius: 1,
+                                offset: Offset(0, 3),
+                              ),
+                            ],
+                          ),
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                photos[index],
+                                fit: BoxFit.cover,
+                              )),
+                        );
+                      }),
+                ),
+                // Text('fdshfsh')
+                // Text(
+                //   "Batches",
+                //   style: GoogleFonts.playfairDisplay(
+                //     textStyle: TextStyle(
+                //         color: Colors.black,
+                //         letterSpacing: .5,
+                //         fontSize: 25,
+                //         fontWeight: FontWeight.bold),
+                //   ),
+                // ),
+                SizedBox(height: 300, child: BatchTabsWidget())
+              ],
+            ),
           ),
         ),
       ),

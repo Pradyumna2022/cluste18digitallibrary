@@ -3,7 +3,7 @@ import 'package:digital_library/global/color.dart';
 import 'package:digital_library/pages/galary_details_page.dart';
 import 'package:digital_library/pages/galery_page.dart';
 import 'package:digital_library/pages/home_page.dart';
-import 'package:digital_library/pages/message_page.dart';
+import 'package:digital_library/pages/fee.dart';
 import 'package:digital_library/widgets/batch_tabs.dart';
 import 'package:digital_library/widgets/drawer.dart';
 import 'package:digital_library/widgets/nav_bar.dart';
