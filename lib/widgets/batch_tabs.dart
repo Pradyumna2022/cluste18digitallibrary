@@ -38,43 +38,30 @@ class _BatchTabsWidgetState extends State<BatchTabsWidget>
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-            decoration: BoxDecoration(
-                border: Border.all(
-                  color: whiteColor,
-                  width: 1,
-                ),
-                color: Color.fromARGB(26, 186, 182, 182),
-                borderRadius: BorderRadius.circular(8)),
-            child: TabBar.secondary(
-              // padding: EdgeInsets.all(5),
-              physics: ScrollPhysics(),
-              // labelPadding: EdgeInsets.all(5),
-              // dividerHeight: -10,
-              // labelColor: Colors.white,
-              labelStyle: GoogleFonts.josefinSans(
-                textStyle: TextStyle(
-                    color: Colors.black,
-                    // letterSpacing: .5,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold),
-              ),
-              unselectedLabelColor: Color.fromARGB(115, 101, 100, 100),
-              dividerColor: Colors.white,
-              // indicatorWeight: 2,
-              indicatorColor: Colors.white,
-              tabAlignment: TabAlignment.fill,
-              controller: _tabController,
-              tabs: [
-                Tab(
-                  text: 'Batch1',
-                ),
-                Tab(text: 'Batch2'),
-                Tab(text: 'Batch3'),
-                Tab(text: 'Batch4'),
-              ],
-            ),
+          TabBar(
+            // padding: EdgeInsets.all(5),
+            physics: ScrollPhysics(),
+            // labelPadding: EdgeInsets.all(5),
+            // dividerHeight: -10,
+            // labelColor: Colors.white,
+            labelStyle: TextStyle(
+                color: Color.fromARGB(255, 6, 5, 104),
+                // letterSpacing: .5,
+                fontSize: 15,
+                fontWeight: FontWeight.bold),
+
+            unselectedLabelColor: Color.fromARGB(115, 101, 100, 100),
+            dividerColor: Colors.white,
+            // indicatorWeight: 2,
+            indicatorColor: Color.fromARGB(206, 255, 255, 255),
+            tabAlignment: TabAlignment.fill,
+            controller: _tabController,
+            tabs: [
+              Tab(text: 'BATCH 1'),
+              Tab(text: 'BATCH 2'),
+              Tab(text: 'BATCH 3'),
+              Tab(text: 'BATCH 4'),
+            ],
           ),
           Expanded(
             child: TabBarView(

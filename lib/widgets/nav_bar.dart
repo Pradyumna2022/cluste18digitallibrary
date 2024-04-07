@@ -10,18 +10,18 @@ class GoogleNavBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 7),
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 7),
+      margin: EdgeInsets.symmetric(horizontal: 5, vertical: 4),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: Colors.grey.shade200,
+          color: Color.fromARGB(255, 4, 162, 146),
           border: Border.all(color: whiteColor, width: 0.2)),
       child: GNav(
-          backgroundColor: Colors.grey.shade200,
+          backgroundColor: Color.fromARGB(255, 4, 162, 146),
           activeColor: whiteColor,
-          tabBackgroundColor: blackColor,
+          tabBackgroundColor: Color.fromARGB(255, 15, 90, 73),
           gap: 8,
-          color: blackColor,
+          color: whiteColor,
           curve: Curves.decelerate,
           padding: EdgeInsets.all(16),
           onTabChange: (index) => onTabChange!(index),

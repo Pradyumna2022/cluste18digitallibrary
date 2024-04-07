@@ -5,6 +5,8 @@ import 'package:digital_library/widgets/batch_tabs.dart';
 import 'package:digital_library/widgets/drawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,83 +44,90 @@ class _HomePageState extends State<HomePage> {
   ];
 
   Future<void> refreshPage() async {}
+  CarouselController buttonCarouselController = CarouselController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Colors.grey[200],
       key: _scaffoldKey,
-      // appBar: AppBar(
-      //   title: Text(
-      //     'THE GUARDIAN',
-      //     style: GoogleFonts.oswald(
-      //       textStyle: TextStyle(
-      //           color: Color.fromARGB(255, 1, 131, 245),
-      //           letterSpacing: 5,
-      //           fontWeight: FontWeight.bold),
-      //     ),
-      //   ),
-      //   leading: GestureDetector(
-      //     onTap: () {
-      //       _scaffoldKey.currentState!.openDrawer();
-      //     },
-      //     child: Builder(builder: (context) {
-      //       return Image.asset(
-      //         'lib/icons/app.png',
-      //         scale: 25,
-      //         color: Color.fromARGB(255, 1, 160, 245),
-      //       );
-      //     }),
-      //   ),
-      //   centerTitle: true,
-      // ),
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 4, 162, 146),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(23),
+                bottomRight: Radius.circular(23))),
+        title: Text(
+          'THE GUARDIAN',
+          style: GoogleFonts.oswald(
+            textStyle: TextStyle(
+                color: whiteColor,
+                letterSpacing: 5,
+                fontWeight: FontWeight.bold),
+          ),
+        ),
+        leading: GestureDetector(
+          onTap: () {
+            _scaffoldKey.currentState!.openDrawer();
+          },
+          child: Builder(builder: (context) {
+            return Image.asset('lib/icons/app.png',
+                scale: 25, color: whiteColor);
+          }),
+        ),
+        centerTitle: true,
+      ),
       drawer: DrawerWidget(),
       body: RefreshIndicator(
         onRefresh: refreshPage,
         child: ListView(
           physics: ScrollPhysics(),
           children: [
-            Container(
-              color: Color.fromARGB(255, 58, 201, 241),
-              padding: EdgeInsets.all(5),
-              child: Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      _scaffoldKey.currentState!.openDrawer();
-                    },
-                    child: Builder(builder: (context) {
-                      return Padding(
-                        padding: const EdgeInsets.only(
-                            top: 10, left: 20, bottom: 5.0),
-                        child: Image.asset(
-                          // alignment: Alignment.topLeft,
-                          'lib/icons/app.png',
-                          scale: 25,
-                          color: Color.fromARGB(255, 1, 160, 245),
-                        ),
-                      );
-                    }),
-                  ),
-                  SizedBox(
-                    width: 25,
-                  ),
-                  Text(
-                    'THE GUARDIAN',
-                    style: GoogleFonts.oswald(
-                      textStyle: TextStyle(
-                          color: Color.fromARGB(255, 1, 131, 245),
-                          letterSpacing: 5,
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
             // Container(
-            //     decoration: BoxDecoration(
+            //   decoration: BoxDecoration(
+            //       color: Color.fromARGB(255, 4, 162, 146),
+            // borderRadius: BorderRadius.only(
+            //     bottomLeft: Radius.circular(23),
+            //     bottomRight: Radius.circular(23))),
+            //   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+            //   child: Row(
+            //     children: [
+            //       GestureDetector(
+            //         onTap: () {
+            //           _scaffoldKey.currentState!.openDrawer();
+            //         },
+            //         child: Builder(builder: (context) {
+            //           return Padding(
+            //             padding: const EdgeInsets.only(
+            //                 top: 10, left: 20, bottom: 5.0),
+            //             child: Image.asset(
+            //               // alignment: Alignment.topLeft,
+            //               'lib/icons/app.png',
+            //               scale: 25,
+            //               color: whiteColor,
+            //             ),
+            //           );
+            //         }),
+            //       ),
+            //       SizedBox(
+            //         width: 25,
+            //       ),
+            //       Text(
+            //         'THE GUARDIAN',
+            //         style: GoogleFonts.oswald(
+            //           textStyle: TextStyle(
+            //               color: whiteColor,
+            //               letterSpacing: 5,
+            //               fontSize: 22,
+            //               fontWeight: FontWeight.bold),
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
+
+            // // Container(
+            // //     decoration: BoxDecoration(
             //       color: Colors.white,
             //       borderRadius: BorderRadius.circular(12),
             //       boxShadow: [
@@ -141,6 +150,7 @@ class _HomePageState extends State<HomePage> {
               height: 170,
               child: CarouselSlider(
                 items: items,
+                carouselController: buttonCarouselController,
                 options: CarouselOptions(
                   // aspectRatio: 2,
                   autoPlayCurve: Curves.bounceIn,
@@ -152,6 +162,7 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis.horizontal,
                   autoPlay: true,
                   enableInfiniteScroll: true,
+
                   // animateToClosest: true,
                   onPageChanged: (index, reason) {
                     print(index.toString() +
@@ -162,6 +173,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+
             // Row(
             //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //   children: [
@@ -195,7 +207,8 @@ class _HomePageState extends State<HomePage> {
             //       ),
             //     ),
             //   ],
-            // ),
+            // ),,
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Column(

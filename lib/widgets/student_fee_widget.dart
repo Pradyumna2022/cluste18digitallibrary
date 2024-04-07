@@ -77,16 +77,16 @@ class StudentFeeWidget extends StatelessWidget {
           Container(
             // margin: EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
-              color: Colors.grey[50],
+              color: Colors.white,
               borderRadius: BorderRadius.circular(4),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 1,
-                  blurRadius: 1,
-                  offset: Offset(0, 3),
-                ),
-              ],
+              // boxShadow: [
+              //   BoxShadow(
+              //     // color: Colors.grey.withOpacity(0.5),
+              //     spreadRadius: 1,
+              //     blurRadius: 1,
+              //     offset: Offset(0, 3),
+              //   ),
+              // ],
             ),
             child: ListView.builder(
               physics: BouncingScrollPhysics(),
@@ -96,15 +96,16 @@ class StudentFeeWidget extends StatelessWidget {
                 return Container(
                   margin: EdgeInsets.only(top: 5),
                   decoration: BoxDecoration(
-                    color: Colors.grey[100],
+                    color: Color.fromARGB(255, 226, 255, 245),
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 1,
-                        blurRadius: 1,
-                        offset: Offset(0, 1),
-                      ),
+                      // BoxShadow(
+                      //   color: const Color.fromARGB(255, 11, 11, 11)
+                      //       .withOpacity(0.5),
+                      //   spreadRadius: 1,
+                      //   blurRadius: 1,
+                      //   offset: Offset(0, 1),
+                      // ),
                     ],
                   ),
                   child: Padding(

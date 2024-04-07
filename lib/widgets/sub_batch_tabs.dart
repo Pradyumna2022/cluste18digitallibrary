@@ -44,29 +44,29 @@ class _SubBatchTabsWidgetState extends State<SubBatchTabsWidget>
           TabBar(
             // physics: ScrollPhysics(),
             dividerHeight: 0,
-            // // labelColor: Colors.white,
+            // labelColor: selectedColor[0],
 
             // // dragStartBehavior: DragStartBehavior.start,
             labelPadding: EdgeInsets.zero,
             splashBorderRadius: BorderRadius.circular(150),
-            // // labelStyle: GoogleFonts.josefinSans(
-            // //   textStyle: TextStyle(
-            // //       color: Colors.green,
-            // //       fontSize: 19,
-            // //       fontWeight: FontWeight.bold),
-            // // ),
-            // unselectedLabelColor: Colors.black45,
-            // // dividerColor: Colors.yellow,
+            labelStyle: GoogleFonts.josefinSans(
+              textStyle: TextStyle(
+                  color: Color.fromARGB(255, 226, 255, 245),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold),
+            ),
+            unselectedLabelColor: Colors.grey,
+            // dividerColor: Colors.ye/llow,
 
             indicatorWeight: 0.01,
-            indicatorColor: whiteColor,
+            indicatorColor: Color.fromARGB(255, 25, 72, 55),
 
             // // tabAlignment: TabAlignment.fill,
             controller: _tabController,
             tabs: [
               Tab(
                 // height: 20,
-                // text: 'Boys',
+                // text: 'BOYS',
                 icon: Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: Image.asset(
@@ -76,6 +76,7 @@ class _SubBatchTabsWidgetState extends State<SubBatchTabsWidget>
                 ),
               ),
               Tab(
+                // text: 'GIRSL',
                 iconMargin: EdgeInsets.all(10),
                 icon: Padding(
                   padding: const EdgeInsets.all(4.0),

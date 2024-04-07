@@ -147,7 +147,7 @@ class Bacth1Girls extends StatelessWidget {
                 return Container(
                   margin: EdgeInsets.symmetric(vertical: 5),
                   decoration: BoxDecoration(
-                    color: Colors.grey[100],
+                    color: Color.fromARGB(255, 226, 255, 245),
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
                       BoxShadow(
