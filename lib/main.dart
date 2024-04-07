@@ -5,9 +5,13 @@ import 'package:digital_library/pages/nested_page.dart';
 import 'package:digital_library/pages/splash_page.dart';
 import 'package:digital_library/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+      overlays: [SystemUiOverlay.bottom]);
   runApp(const MyApp());
 }
 
@@ -21,6 +25,6 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         //nested for the whole app control
         // theme: lightMode,
-        home: SplashScreen());
+        home: NestedPage());
   }
 }
