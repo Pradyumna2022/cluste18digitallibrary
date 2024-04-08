@@ -38,30 +38,42 @@ class _BatchTabsWidgetState extends State<BatchTabsWidget>
     return Scaffold(
       body: Column(
         children: [
-          TabBar(
-            // padding: EdgeInsets.all(5),
-            physics: ScrollPhysics(),
-            // labelPadding: EdgeInsets.all(5),
-            // dividerHeight: -10,
-            // labelColor: Colors.white,
-            labelStyle: TextStyle(
-                color: Color.fromARGB(255, 6, 5, 104),
-                // letterSpacing: .5,
-                fontSize: 15,
-                fontWeight: FontWeight.bold),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Color.fromARGB(255, 4, 162, 146),
+            ),
+            child: TabBar(
+              indicatorSize: TabBarIndicatorSize.tab,
+              // padding: EdgeInsets.all(5),
+              physics: ScrollPhysics(),
+              // labelPadding: EdgeInsets.symmetric(horizontal: 5),
+              // dividerHeight: -10,
+              // labelColor: Colors.white,
+              // indicatorPadding:
+              //     const EdgeInsets.symmetric(horizontal: -5, vertical: 8),
+              labelStyle: TextStyle(
+                  color: whiteColor,
+                  // letterSpacing: .5,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold),
 
-            unselectedLabelColor: Color.fromARGB(115, 101, 100, 100),
-            dividerColor: Colors.white,
-            // indicatorWeight: 2,
-            indicatorColor: Color.fromARGB(206, 255, 255, 255),
-            tabAlignment: TabAlignment.fill,
-            controller: _tabController,
-            tabs: [
-              Tab(text: 'BATCH 1'),
-              Tab(text: 'BATCH 2'),
-              Tab(text: 'BATCH 3'),
-              Tab(text: 'BATCH 4'),
-            ],
+              unselectedLabelColor: Color.fromARGB(255, 230, 214, 214),
+              dividerColor: Colors.transparent,
+              // indicatorWeight: 2,
+              indicatorColor: Color.fromARGB(206, 255, 255, 255),
+              tabAlignment: TabAlignment.fill,
+              indicator: BoxDecoration(
+                  color: Color.fromARGB(255, 4, 88, 80),
+                  borderRadius: BorderRadius.circular(10)),
+              controller: _tabController,
+              tabs: [
+                Tab(text: 'BATCH 1'),
+                Tab(text: 'BATCH 2'),
+                Tab(text: 'BATCH 3'),
+                Tab(text: 'BATCH 4'),
+              ],
+            ),
           ),
           Expanded(
             child: TabBarView(

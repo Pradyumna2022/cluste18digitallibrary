@@ -13,17 +13,18 @@ class DrawerWidget extends StatelessWidget {
     return Drawer(
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey.shade200,
+          color: Color.fromARGB(255, 226, 255, 245),
         ),
         child: ListView(
           children: [
-            DrawerHeader(
-                child: Center(
-              child: Text(
-                "L O G O",
-                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-              ),
-            )),
+            Container(
+              color: blackColor,
+              child: DrawerHeader(
+                  margin: EdgeInsets.zero,
+                  padding: EdgeInsets.zero,
+                  child:
+                      Center(child: Image.asset('lib/icons/digital li.jpg'))),
+            ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.home,
@@ -34,8 +35,8 @@ class DrawerWidget extends StatelessWidget {
                 style: GoogleFonts.josefinSans(
                   textStyle: TextStyle(
                       color: Colors.black,
-                      letterSpacing: .5,
-                      fontSize: 25,
+                      // letterSpacing: .5,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -54,7 +55,7 @@ class DrawerWidget extends StatelessWidget {
                   textStyle: TextStyle(
                       color: Colors.black,
                       letterSpacing: .5,
-                      fontSize: 25,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -71,7 +72,7 @@ class DrawerWidget extends StatelessWidget {
                   textStyle: TextStyle(
                       color: Colors.black,
                       letterSpacing: .5,
-                      fontSize: 25,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -87,7 +88,7 @@ class DrawerWidget extends StatelessWidget {
                   textStyle: TextStyle(
                       color: Colors.black,
                       letterSpacing: .5,
-                      fontSize: 25,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold),
                 ),
               ),

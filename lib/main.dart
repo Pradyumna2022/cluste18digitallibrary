@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return const GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         //nested for the whole app control

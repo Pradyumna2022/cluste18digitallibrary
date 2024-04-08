@@ -14,13 +14,13 @@ class GaleryPage extends StatelessWidget {
       'lib/icons/p4.jpg',
     ];
     return Scaffold(
-      appBar: AppBar(
-          leading: IconButton(
-        onPressed: () => Navigator.pop(context),
-        icon: Icon(Icons.arrow_back),
-      )),
+      // appBar: AppBar(
+      //     leading: IconButton(
+      //   onPressed: () => Navigator.pop(context),
+      //   icon: Icon(Icons.arrow_back),
+      // )),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: GridView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),

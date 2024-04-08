@@ -13,9 +13,10 @@ class GoogleNavBarWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 5, vertical: 7),
       margin: EdgeInsets.symmetric(horizontal: 5, vertical: 4),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: Color.fromARGB(255, 4, 162, 146),
-          border: Border.all(color: whiteColor, width: 0.2)),
+        borderRadius: BorderRadius.circular(12),
+        color: Color.fromARGB(255, 4, 162, 146),
+        // border: Border.all(color: whiteColor, width: 0.2)
+      ),
       child: GNav(
           backgroundColor: Color.fromARGB(255, 4, 162, 146),
           activeColor: whiteColor,

@@ -1,5 +1,7 @@
 import 'package:digital_library/global/color.dart';
+import 'package:digital_library/pages/qr_code.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StudentFeeWidget extends StatelessWidget {
@@ -220,25 +222,31 @@ class StudentFeeWidget extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Container(
-                          // width: double.infinity,
-                          // alignment: Alignment.bottomRight,
-                          // margin: EdgeInsets.only(top: 10),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 10,
+                        GestureDetector(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => QrCodePage())),
+                          child: Container(
+                            // width: double.infinity,
+                            // alignment: Alignment.bottomRight,
+                            // margin: EdgeInsets.only(top: 10),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 10,
+                            ),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(5),
+                                  bottomRight: Radius.circular(5)),
+                              color: Colors.green.shade500,
+                            ),
+                            child: Center(
+                                child: Text(
+                              "Pay Now",
+                              style: TextStyle(color: whiteColor),
+                            )),
                           ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(5),
-                                bottomRight: Radius.circular(5)),
-                            color: Colors.green.shade500,
-                          ),
-                          child: Center(
-                              child: Text(
-                            "Pay Now",
-                            style: TextStyle(color: whiteColor),
-                          )),
                         ),
                       ],
                     ),
