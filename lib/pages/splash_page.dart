@@ -1,6 +1,5 @@
 import 'dart:async';
-import 'package:digital_library/pages/auth/application_form.dart';
-import 'package:digital_library/pages/auth/auth_tab.dart';
+import 'package:digital_library/auth/application_form.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

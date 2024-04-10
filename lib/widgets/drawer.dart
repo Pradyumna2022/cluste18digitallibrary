@@ -1,4 +1,7 @@
+import 'package:digital_library/auth/student_login.dart';
 import 'package:digital_library/global/color.dart';
+import 'package:digital_library/auth/application_form.dart';
+import 'package:digital_library/pages/contact_us.dart';
 import 'package:digital_library/pages/galery_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,37 +20,48 @@ class DrawerWidget extends StatelessWidget {
         ),
         child: ListView(
           children: [
-            Container(
-              color: blackColor,
-              child: DrawerHeader(
-                  margin: EdgeInsets.zero,
-                  padding: EdgeInsets.zero,
-                  child:
-                      Center(child: Image.asset('lib/icons/digital li.jpg'))),
-            ),
-            ListTile(
-              leading: Icon(
-                CupertinoIcons.home,
-                color: blackColor,
+            DrawerHeader(
+                child: Center(
+                    child: Text(
+              'The Guardian',
+              style: GoogleFonts.josefinSans(
+                textStyle: TextStyle(
+                    color: Colors.black,
+                    // letterSpacing: .5,
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold),
               ),
-              title: Text(
-                "Home",
-                style: GoogleFonts.josefinSans(
-                  textStyle: TextStyle(
-                      color: Colors.black,
-                      // letterSpacing: .5,
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold),
+            ))),
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: ListTile(
+                leading: Icon(
+                  CupertinoIcons.home,
+                  color: blackColor,
                 ),
+                title: Text(
+                  "Home",
+                  style: GoogleFonts.josefinSans(
+                    textStyle: TextStyle(
+                        color: Colors.black,
+                        // letterSpacing: .5,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                },
               ),
-              onTap: () {
-                Navigator.pop(context);
-              },
             ),
             ListTile(
-              leading: Image.asset(
-                'lib/icons/picture.png',
-                width: 25,
+              // leading: Image.asset(
+              //   'lib/icons/picture.png',
+              //   width: 25,
+              // ),
+              leading: Icon(
+                CupertinoIcons.folder,
+                color: blackColor,
               ),
               title: Text(
                 "Gallery",
@@ -65,9 +79,9 @@ class DrawerWidget extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: Icon(Icons.contact_emergency_outlined),
+              leading: Icon(Icons.login),
               title: Text(
-                "Contact",
+                "Login",
                 style: GoogleFonts.josefinSans(
                   textStyle: TextStyle(
                       color: Colors.black,
@@ -77,11 +91,14 @@ class DrawerWidget extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => StudentLoginForm()));
               },
             ),
             ListTile(
-              leading: Icon(Icons.room_service),
+              leading: Icon(Icons.design_services_outlined),
               title: Text(
                 "Services",
                 style: GoogleFonts.josefinSans(
@@ -95,7 +112,41 @@ class DrawerWidget extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-            )
+            ),
+            ListTile(
+              leading: Icon(Icons.contact_emergency_outlined),
+              title: Text(
+                "Contact Us",
+                style: GoogleFonts.josefinSans(
+                  textStyle: TextStyle(
+                      color: Colors.black,
+                      letterSpacing: .5,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ContactUsPage()));
+                // Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text(
+                "Logout",
+                style: GoogleFonts.josefinSans(
+                  textStyle: TextStyle(
+                      color: Colors.black,
+                      letterSpacing: .5,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
           ],
         ),
       ),

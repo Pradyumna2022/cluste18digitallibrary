@@ -43,9 +43,6 @@ class StudentFeeWidget extends StatelessWidget {
       child: ListView(
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            height: 10,
-          ),
           Container(
             // margin: EdgeInsets.only(bottom: 10),
             padding: EdgeInsets.symmetric(
@@ -54,7 +51,7 @@ class StudentFeeWidget extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
-              color: Colors.red.shade300,
+              color: Color.fromARGB(255, 244, 50, 50),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -79,7 +76,7 @@ class StudentFeeWidget extends StatelessWidget {
           Container(
             // margin: EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.transparent,
               borderRadius: BorderRadius.circular(4),
               // boxShadow: [
               //   BoxShadow(
@@ -98,7 +95,7 @@ class StudentFeeWidget extends StatelessWidget {
                 return Container(
                   margin: EdgeInsets.only(top: 5),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 226, 255, 245),
+                    color: Color.fromARGB(255, 12, 43, 40),
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
                       // BoxShadow(
@@ -134,7 +131,7 @@ class StudentFeeWidget extends StatelessWidget {
                                   Text(
                                     "Name",
                                     style: TextStyle(
-                                        color: Colors.black87,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 15),
                                   ),
@@ -143,7 +140,7 @@ class StudentFeeWidget extends StatelessWidget {
                               Text(boysName[index].toString(),
                                   style: GoogleFonts.ptSans(
                                     textStyle: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         letterSpacing: .5,
                                         fontSize: 17,
                                         fontWeight: FontWeight.bold),
@@ -170,7 +167,7 @@ class StudentFeeWidget extends StatelessWidget {
                                   Text(
                                     "Due Date",
                                     style: TextStyle(
-                                        color: Colors.black87,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 15),
                                   ),
@@ -179,7 +176,7 @@ class StudentFeeWidget extends StatelessWidget {
                               Text(boysDate[index].toString(),
                                   style: GoogleFonts.ptSans(
                                     textStyle: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         // letterSpacing: .5,
                                         fontSize: 17,
                                         fontWeight: FontWeight.bold),
@@ -205,7 +202,7 @@ class StudentFeeWidget extends StatelessWidget {
                                   Text(
                                     "Amount",
                                     style: TextStyle(
-                                        color: Colors.black87,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 15),
                                   ),
@@ -214,7 +211,7 @@ class StudentFeeWidget extends StatelessWidget {
                               Text(boysAmount[index].toString(),
                                   style: GoogleFonts.ptSans(
                                     textStyle: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         letterSpacing: .5,
                                         fontSize: 17,
                                         fontWeight: FontWeight.bold),
@@ -226,7 +223,11 @@ class StudentFeeWidget extends StatelessWidget {
                           onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => QrCodePage())),
+                                  builder: (context) => QrCodePage(
+                                        studentName: boysName[index].toString(),
+                                        totalAmount:
+                                            boysAmount[index].toString(),
+                                      ))),
                           child: Container(
                             // width: double.infinity,
                             // alignment: Alignment.bottomRight,
@@ -239,7 +240,7 @@ class StudentFeeWidget extends StatelessWidget {
                               borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(5),
                                   bottomRight: Radius.circular(5)),
-                              color: Colors.green.shade500,
+                              color: Colors.green,
                             ),
                             child: Center(
                                 child: Text(

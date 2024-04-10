@@ -1,7 +1,7 @@
-import 'package:digital_library/pages/auth/application_form.dart';
-import 'package:digital_library/pages/auth/log_in.dart';
+import 'package:digital_library/auth/application_form.dart';
 import 'package:digital_library/pages/galery_page.dart';
 import 'package:digital_library/pages/nested_page.dart';
+import 'package:digital_library/pages/qr_code.dart';
 import 'package:digital_library/pages/splash_page.dart';
 import 'package:digital_library/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -20,11 +20,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         //nested for the whole app control
         // theme: lightMode,
-        home: NestedPage());
+        home: SplashScreen());
   }
 }

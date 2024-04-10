@@ -3,21 +3,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Bacth1Boys extends StatelessWidget {
-  Bacth1Boys({super.key});
-  List<String> boysName = [
-    'Sumit Mauray',
-    'Aditya Yadav',
-    'Vivek Verma',
-    'Saurabh Yadav'
-  ];
-  List<String> boysTime = [
+// ignore: must_be_immutable
+class Bacth1Girls extends StatelessWidget {
+  Bacth1Girls({super.key});
+  List<String> girlsName = ['Sikha', 'Kajal', 'Joya', 'Priyanka'];
+  List<String> girlsTime = [
     '01:00 AM to 03:12 PM',
     '01:15 AM to 03:25 PM',
     '01:09 AM to 03:50 PM',
     '01:05 AM to 03:32 PM',
   ];
-  List<String> boysAtendcn = ['Present', 'Present', 'Present', 'Present'];
+  List<String> girlsAtendcn = ['Present', 'Present', 'Present', 'Present'];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -145,13 +141,13 @@ class Bacth1Boys extends StatelessWidget {
             padding: const EdgeInsets.only(top: 5.0),
             child: ListView.builder(
               physics: BouncingScrollPhysics(),
-              itemCount: boysName.length,
+              itemCount: girlsAtendcn.length,
               shrinkWrap: true,
               itemBuilder: (context, index) {
                 return Container(
                   margin: EdgeInsets.symmetric(vertical: 5),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 226, 255, 245),
+                    color: Color.fromARGB(255, 4, 88, 80),
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
                       BoxShadow(
@@ -183,16 +179,16 @@ class Bacth1Boys extends StatelessWidget {
                                 Text(
                                   "Name",
                                   style: TextStyle(
-                                      color: Colors.black87,
+                                      color: whiteColor,
                                       fontWeight: FontWeight.w500,
                                       fontSize: 15),
                                 ),
                               ],
                             ),
-                            Text(boysName[index].toString(),
+                            Text(girlsName[index].toString(),
                                 style: GoogleFonts.josefinSans(
                                   textStyle: TextStyle(
-                                      color: Colors.black,
+                                      color: whiteColor,
                                       letterSpacing: .5,
                                       fontSize: 17,
                                       fontWeight: FontWeight.bold),
@@ -219,16 +215,16 @@ class Bacth1Boys extends StatelessWidget {
                                 Text(
                                   "Time",
                                   style: TextStyle(
-                                      color: Colors.black87,
+                                      color: whiteColor,
                                       fontWeight: FontWeight.w500,
                                       fontSize: 15),
                                 ),
                               ],
                             ),
-                            Text(boysTime[index].toString(),
+                            Text(girlsTime[index].toString(),
                                 style: GoogleFonts.josefinSans(
                                   textStyle: TextStyle(
-                                      color: Colors.black,
+                                      color: whiteColor,
                                       letterSpacing: .5,
                                       fontSize: 17,
                                       fontWeight: FontWeight.bold),
@@ -254,16 +250,16 @@ class Bacth1Boys extends StatelessWidget {
                                 Text(
                                   "Attendance",
                                   style: TextStyle(
-                                      color: Colors.black87,
+                                      color: whiteColor,
                                       fontWeight: FontWeight.w500,
                                       fontSize: 15),
                                 ),
                               ],
                             ),
-                            Text(boysAtendcn[index].toString(),
+                            Text(girlsAtendcn[index].toString(),
                                 style: GoogleFonts.josefinSans(
                                   textStyle: TextStyle(
-                                      color: Colors.black,
+                                      color: whiteColor,
                                       letterSpacing: .5,
                                       fontSize: 17,
                                       fontWeight: FontWeight.bold),

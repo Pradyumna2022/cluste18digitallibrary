@@ -1,10 +1,8 @@
 import 'package:digital_library/global/color.dart';
-import 'package:digital_library/pages/auth/log_in.dart';
-import 'package:digital_library/pages/auth/sign_in.dart';
-import 'package:digital_library/pages/batch/batch1.dart';
-import 'package:digital_library/pages/batch/batch2.dart';
-import 'package:digital_library/pages/batch/batch3.dart';
-import 'package:digital_library/pages/batch/batch4.dart';
+import 'package:digital_library/batch/main_batch.dart/batch1.dart';
+import 'package:digital_library/batch/main_batch.dart/batch2.dart';
+import 'package:digital_library/batch/main_batch.dart/batch3.dart';
+import 'package:digital_library/batch/main_batch.dart/batch4.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
