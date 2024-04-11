@@ -25,6 +25,6 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         //nested for the whole app control
         // theme: lightMode,
-        home: SplashScreen());
+        home: NestedPage());
   }
 }
