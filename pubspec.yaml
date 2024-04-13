@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   image_picker: ^1.0.7
+  pinput: ^4.0.0
+  webview_flutter: ^4.7.0
   dropdown_button2: ^2.3.9
   file_picker: ^8.0.0+1
   get: ^4.6.6

@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:digital_library/auth/application_form.dart';
 import 'package:digital_library/global/color.dart';
-import 'package:digital_library/pages/nested_page.dart';
+import 'package:digital_library/pages/home_fee_galery_bottom_bar.dart';
 import 'package:digital_library/widgets/my_button.dart';
 import 'package:digital_library/widgets/my_text_field.dart';
 import 'package:dotted_border/dotted_border.dart';
@@ -16,14 +16,14 @@ import 'package:image_picker/image_picker.dart';
 
 // File? imageFile;
 
-class StudentLoginForm extends StatefulWidget {
-  const StudentLoginForm({super.key});
+class OperatorLogin extends StatefulWidget {
+  const OperatorLogin({super.key});
 
   @override
-  State<StudentLoginForm> createState() => _StudentLoginFormState();
+  State<OperatorLogin> createState() => _OperatorLoginState();
 }
 
-class _StudentLoginFormState extends State<StudentLoginForm> {
+class _OperatorLoginState extends State<OperatorLogin> {
   final passwordController = TextEditingController();
 
   final idController = TextEditingController();
@@ -43,7 +43,7 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
           Container(
             height: MediaQuery.of(context).size.height * 0.4,
             decoration: BoxDecoration(
-                color: Color.fromARGB(255, 4, 88, 80),
+                color: Color.fromARGB(255, 85, 19, 155),
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(
                       100,
@@ -61,7 +61,7 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
                     // height: MediaQuery.of(context).size.height * 0.65,
                     // width: MediaQuery.of(context).size.width * 0.8,
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 4, 162, 146),
+                        color: Color.fromARGB(255, 150, 68, 237),
                         borderRadius: BorderRadius.circular(20)),
                     child: Form(
                       key: _formKey,
@@ -72,7 +72,7 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
                             Padding(
                               padding: const EdgeInsets.only(top: 20.0),
                               child: Text(
-                                "W E L C O M E   B A C K",
+                                "O P E R A T O R",
                                 style: TextStyle(
                                     color: whiteColor,
                                     fontSize: 25,
@@ -81,11 +81,6 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
                             ),
                             SizedBox(
                               height: 35,
-                            ),
-                            MyTextField(
-                              controller: idController,
-                              validationText: 'Enter Your Id',
-                              hintText: 'Id',
                             ),
                             MyTextField(
                               controller: emailController,
@@ -106,43 +101,12 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                NestedPage()));
+                                                HomeFeeGaleryBottomBar()));
                                   } else {
                                     print(
                                         'no please bhag ja-------------------');
                                   }
                                 }),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 5.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    "Don't have any Account?",
-                                    style: TextStyle(color: Colors.grey[200]),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  ApplicationForm()));
-                                    },
-                                    child: Text(
-                                      "Create Account",
-                                      style: TextStyle(
-                                          color: whiteColor,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            )
                           ],
                         ),
                       ),

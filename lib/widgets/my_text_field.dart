@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class MyTextField extends StatelessWidget {
   final TextEditingController controller;
   final String validationText;
   final bool obscureText;
+  final List<TextInputFormatter>? inputFormatters;
   final TextInputType? keyboardType;
   final Widget? suffxIcon;
   final String hintText;
@@ -13,6 +15,7 @@ class MyTextField extends StatelessWidget {
       this.keyboardType,
       required this.controller,
       required this.validationText,
+      this.inputFormatters,
       this.obscureText = false,
       required this.hintText});
 
@@ -31,6 +34,7 @@ class MyTextField extends StatelessWidget {
               return validationText;
             }
           },
+          inputFormatters: inputFormatters,
           keyboardType: keyboardType,
           decoration: InputDecoration(
             suffixIcon: suffxIcon,

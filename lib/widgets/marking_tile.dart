@@ -17,14 +17,20 @@ class MarketingIiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(8),
+        // padding: EdgeInsets.all(4),
         decoration: BoxDecoration(
-            color: Color.fromARGB(255, 4, 26, 24),
+            color: Color.fromARGB(255, 196, 171, 240),
             borderRadius: BorderRadius.circular(15)),
-        child: Image.asset(
-          iconPath,
-          scale: 6,
-          // color: Colors.black,
+        child: Container(
+          margin: EdgeInsets.all(5),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              iconPath,
+              fit: BoxFit.cover,
+              // color: Colors.black,
+            ),
+          ),
         ));
   }
 }

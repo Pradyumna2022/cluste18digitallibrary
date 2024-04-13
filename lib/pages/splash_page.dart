@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:digital_library/auth/application_form.dart';
+import 'package:digital_library/pages/common_hom_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -33,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if (mounted) {
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => ApplicationForm()),
+            MaterialPageRoute(builder: (context) => CommonHomePage()),
             (route) => false);
       }
     });

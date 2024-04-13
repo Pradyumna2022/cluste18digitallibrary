@@ -9,6 +9,18 @@ class Bacth1Boys extends StatelessWidget {
     'Sumit Mauray',
     'Aditya Yadav',
     'Vivek Verma',
+    'Saurabh Yadav',
+    'Sumit Mauray',
+    'Aditya Yadav',
+    'Vivek Verma',
+    'Saurabh Yadav',
+    'Sumit Mauray',
+    'Aditya Yadav',
+    'Vivek Verma',
+    'Saurabh Yadav',
+    'Sumit Mauray',
+    'Aditya Yadav',
+    'Vivek Verma',
     'Saurabh Yadav'
   ];
   List<String> boysTime = [
@@ -16,8 +28,37 @@ class Bacth1Boys extends StatelessWidget {
     '01:15 AM to 03:25 PM',
     '01:09 AM to 03:50 PM',
     '01:05 AM to 03:32 PM',
+    '01:00 AM to 03:12 PM',
+    '01:15 AM to 03:25 PM',
+    '01:09 AM to 03:50 PM',
+    '01:05 AM to 03:32 PM',
+    '01:00 AM to 03:12 PM',
+    '01:15 AM to 03:25 PM',
+    '01:09 AM to 03:50 PM',
+    '01:05 AM to 03:32 PM',
+    '01:00 AM to 03:12 PM',
+    '01:15 AM to 03:25 PM',
+    '01:09 AM to 03:50 PM',
+    '01:05 AM to 03:32 PM',
   ];
-  List<String> boysAtendcn = ['Present', 'Present', 'Present', 'Present'];
+  List<String> boysAtendcn = [
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+    'Present',
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,9 +77,9 @@ class Bacth1Boys extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(top: 5.0),
         child: ListView.builder(
-          physics: BouncingScrollPhysics(),
-          itemCount: boysName.length,
-          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: 2,
+          shrinkWrap: false,
           itemBuilder: (context, index) {
             return Container(
               margin: EdgeInsets.symmetric(vertical: 5),

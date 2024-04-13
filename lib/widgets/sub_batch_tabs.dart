@@ -99,6 +99,7 @@ class _SubBatchTabsWidgetState extends State<SubBatchTabsWidget>
           ),
           Expanded(
             child: TabBarView(
+              physics: NeverScrollableScrollPhysics(),
               controller: _tabController,
               children: [Bacth1Boys(), Bacth1Girls()],
             ),

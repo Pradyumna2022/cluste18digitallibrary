@@ -44,6 +44,7 @@ class _BatchTabsWidgetState extends State<BatchTabsWidget>
             indicatorSize: TabBarIndicatorSize.tab,
             // padding: EdgeInsets.all(5),
             physics: ScrollPhysics(),
+
             // labelPadding: EdgeInsets.symmetric(horizontal: 5),
             // dividerHeight: -10,
             // labelColor: Colors.white,
@@ -61,7 +62,7 @@ class _BatchTabsWidgetState extends State<BatchTabsWidget>
             indicatorColor: Color.fromARGB(206, 255, 255, 255),
             tabAlignment: TabAlignment.fill,
             indicator: BoxDecoration(
-                color: Color.fromARGB(255, 4, 88, 80),
+                color: Color.fromARGB(255, 17, 50, 45),
                 borderRadius: BorderRadius.circular(10)),
             controller: _tabController,
             tabs: [
@@ -74,6 +75,7 @@ class _BatchTabsWidgetState extends State<BatchTabsWidget>
         ),
         Expanded(
           child: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
             controller: _tabController,
             children: [BatchOne(), BatchTwo(), BatchThree(), BatchFour()],
           ),

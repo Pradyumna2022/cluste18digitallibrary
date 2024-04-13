@@ -140,8 +140,8 @@ class Bacth1Girls extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 5.0),
             child: ListView.builder(
-              physics: BouncingScrollPhysics(),
-              itemCount: girlsAtendcn.length,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: 2,
               shrinkWrap: true,
               itemBuilder: (context, index) {
                 return Container(

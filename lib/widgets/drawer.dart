@@ -1,4 +1,4 @@
-import 'package:digital_library/auth/student_login.dart';
+import 'package:digital_library/auth/phon_number_login.dart';
 import 'package:digital_library/global/color.dart';
 import 'package:digital_library/auth/application_form.dart';
 import 'package:digital_library/pages/contact_us.dart';
@@ -16,7 +16,7 @@ class DrawerWidget extends StatelessWidget {
     return Drawer(
       child: Container(
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 226, 255, 245),
+          color: Color.fromARGB(255, 203, 180, 242),
         ),
         child: ListView(
           children: [
@@ -94,7 +94,7 @@ class DrawerWidget extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => StudentLoginForm()));
+                        builder: (context) => PhoneNubmerLogin()));
               },
             ),
             ListTile(
